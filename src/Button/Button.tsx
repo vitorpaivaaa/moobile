@@ -3,27 +3,33 @@ import { TouchableOpacity, Text, StyleSheet, View } from "react-native";
 
 
 interface ButtonProps{
-    title:String;
+    title:String
+
     OnPress:() => void
 }
-export default function Button(){
-    return (
+
+const Button = ({
+    title
+    }: ButtonProps) => {
+        return (
         
-        <View >       
-         <TouchableOpacity style= {style.container}>
-            <Text style={style.title}>Quero adotar</Text>
-        </TouchableOpacity>
-</View>
-    );
-}
+            <View >       
+             <TouchableOpacity style= {style.container}>
+                <Text style={style.title}>{title}</Text>
+            </TouchableOpacity>
+    </View>
+        );
+    }
+    
+export default Button;
+
 const style = StyleSheet.create({
     container:{
-    padding:10,
     backgroundColor:"#01377D",
     alignContent:"center",
     justifyContent:"center",
-    borderRadius:20,
-    width:280,
+    borderRadius:25,
+    width:350,
     height:50
     },
     title:{
